@@ -1,0 +1,10 @@
+AuthUserFile .htpasswd
+AuthGroupFile .htgroup
+AuthName "Visiteur, vous pénétrez dans une section réservée aux membres, veuillez vous identifier"
+AuthType Basic
+<Limit GET>
+require group Membres Admin
+</Limit>
+<LimitExcept GET>
+deny from all
+</LimitExcept>
